@@ -11,3 +11,11 @@ h1 {
     background-color: orange;
     color:aqua
 }
+
+#cookieSales,th, td {
+    background-color: aquamarine;
+    text-align: center;
+    border: solid 3px;
+    margin: auto;
+    margin-top: 100px;
+}
