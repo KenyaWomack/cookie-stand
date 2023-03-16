@@ -1,2 +1,2 @@
 # cookie-stand
-lab06
+![lighthouse](lighthouse.png);
