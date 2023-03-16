@@ -3,19 +3,54 @@ h2 {
 }
 
 footer {
-    background-color: green;
-    color:red;
+    background-color: lightgrey;
+    color: black;
 }
 
 h1 {
-    background-color: orange;
-    color:aqua
+    background-color: lightgray;
+    color: black
 }
 
-#cookieSales,th, td {
+#cookieSales,
+th,
+td {
     background-color: aquamarine;
     text-align: center;
     border: solid 3px;
     margin: auto;
     margin-top: 100px;
+}
+
+section {
+    margin: 30px;
+    border: thick solid orange;
+}
+
+article {
+    border: thick solid black;
+    margin: 0 auto;
+    width: 32%;
+    max-width: 300px;
+    display: flex;
+    border: 2px solid purple;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+   
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+.row {
+    display: flex;
+}
+.row article {
+    flex-direction: row;
+}
+footer {
+    margin-top: 70%;
+    text-align: center;
 }
