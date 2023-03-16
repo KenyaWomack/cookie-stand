@@ -1,5 +1,6 @@
 h2 {
-    font-family: 'Sono', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blueviolet;
 }
 
 footer {
@@ -9,7 +10,7 @@ footer {
 
 h1 {
     background-color: lightgray;
-    color: black
+    color: black;
 }
 
 #cookieSales,
@@ -53,4 +54,5 @@ img {
 footer {
     margin-top: 70%;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
