@@ -1,4 +1,5 @@
 'use strict';
+const formElements = document.getElementById('addCookieStores');
 function ranNumb(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -14,7 +15,7 @@ let allStores = [];
 function Cookiestore(name, min, max, ave) {
   this.name = name;
   this.minCust = min;
-  this.maxCust = max;
+  this.maxCust = max; 
   this.avgSale = ave;
   this.custPerHr = [];
   this.cookiesPerHr = [];
@@ -68,9 +69,16 @@ row.appendChild(totals2);
 }
 renderHeader();
 // Table Footer
+let total = document.createElement('th');
+let row = document.createElement('tr');
+let footer = document.createElement('th');
+let gtotal = document.createElement('th');
 function renderFooter() {
-  let row = document.createElement('tr');
-  let total = document.createElement('th');
+  
+    footer.textContent = '';
+  
+  row.textContent = "";
+  
   total.textContent = 'Totals';
   row.appendChild(total);
   let grandTotal = 0;
@@ -81,10 +89,10 @@ function renderFooter() {
       grandTotal += allStores[j].cookiesPerHr[i];
     }
     let footer = document.createElement('th');
-    footer.textContent = colTotal;
+    footer.textContent = grandTotal;
     row.appendChild(footer);
   }
-  let gtotal = document.createElement('th');
+  gtotal = document.createElement('th');
   gtotal.textContent = grandTotal;
   row.appendChild(gtotal);
   tableBody.appendChild(row);
@@ -103,4 +111,33 @@ let lima = new Cookiestore('Lima', 2, 16, 4.6);
 for (let i = 0; i < allStores.length; i++) {
   allStores[i].render();
 }
+
+formElements.addEventListener('submit',function(event){
+  event.preventDefault();
+
+let name = event.target.store_name.value;
+// console.log(test);
+
+let min_customers = parseInt(event.target.min_customers.value);
+console.log(name, min_customers);
+
+let maximum_customers = parseInt(event.target.maximum_customers.value);
+
+let avgCookieSales = parseInt(event.target.avgCookieSales.value);
+console.log(name, typeof min_customers, typeof maximum_customers, typeof avgCookieSales);
+
+let store = new Cookiestore (name, min_customers, maximum_customers, avgCookieSales);
+store.render();
+row.innerHTML = '';
+renderFooter();
+
+  // let {store_name, min_customers, maximum_customers, avgCookieSales} = event.target;
+  // console.log(store_name.value, min_customers.value, maximum_customers.value, avgCookieSales.value);
+  // let newStore = new Cookiestore(store_name.value, min_customers.value, maximum_customers.value, avgCookieSales.value);
+  // console.log(newStore);
+  // allStores.push(newStore);
+  // newStore.doitAll();
+  
+});
+
 renderFooter();
