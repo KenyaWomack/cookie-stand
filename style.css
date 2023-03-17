@@ -11,6 +11,7 @@ footer {
 h1 {
     background-color: lightgray;
     color: black;
+    font-family: 'ABeeZee', sans-serif;
 }
 
 #cookieSales,
@@ -55,4 +56,16 @@ footer {
     margin-top: 70%;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input:invalid:required {
+    background: lightgray;
+}
+
+input:valid {
+    background: green;
+}
+
+#addCookieStores {
+    background: rgb(164, 130, 164);
 }
